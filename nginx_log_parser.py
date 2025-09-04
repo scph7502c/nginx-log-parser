@@ -14,6 +14,10 @@ log_files = (NGINX_ACCESS_LOG_FILE, NGINX_ERROR_LOG_FILE)
 log_line = []
 log_list = []
 
+log_pattern = re.compile(
+    r"^(?P<ip>\S+) (?P<identd>\S+) (?P<user>\S+) (\[(?P<time_local>[^]]+)]) \"(?P<request>[^\"]*)\""
+)
+
 today_date = datetime.today().strftime("%Y-%m-%d")
 print(today_date)
 
@@ -42,16 +46,14 @@ def read_whole_log_file(filename):
 def create_log_list_of_lists(filename):
     with open(filename, "r", encoding="utf-8") as f:
         for line in f:
-            log_list.append(create_log_dict_of_lists(line))
+            log_list.append(create_log_dict_of_lists(line, log_pattern))
     for l in log_list:
         print(l)
     return log_list
 
 
-def create_log_dict_of_lists(log_lists_line):
-    log_pattern = re.compile(
-        r"^(?P<ip>\S+) (?P<identd>\S+) (?P<user>\S+) (\[(?P<time_local>[^]]+)]) "
-    )
+def create_log_dict_of_lists(log_lists_line, pattern):
+
     match = log_pattern.match(log_lists_line)
     return match.groupdict()
 
