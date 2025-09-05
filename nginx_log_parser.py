@@ -15,7 +15,7 @@ log_line = []
 log_list = []
 
 log_pattern = re.compile(
-    r"^(?P<ip>\S+) (?P<identd>\S+) (?P<user>\S+) (\[(?P<time_local>[^]]+)]) \"(?P<request>[^\"]*)\""
+    r"^(?P<ip>\S+) (?P<identd>\S+) (?P<user>\S+) (\[(?P<time_local>[^]]+)]) \"(?P<request>[^\"]*)\" (?P<status_code>\d+) (?P<body_bytes_sent>\d+) \"(?P<http_referer>[^\"]*)\" "
 )
 
 today_date = datetime.today().strftime("%Y-%m-%d")
