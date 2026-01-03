@@ -45,11 +45,6 @@ python nginx_log_parser.py
 ```shell
 python nginx_log_parser.py
 ```
-
-**Example Output**
-IP: 182.44.67.97, Status: 301
-IP: 43.157.179.227, Status: 200
-
 ## Further development
 
 - Basic Nginx log reader (current)
