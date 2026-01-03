@@ -4,8 +4,6 @@ This repository is a **work in progress** project focused on parsing and analyzi
 The first script included here works with **Nginx access logs**, but the repository will be extended with additional
 tools and parsers in the future.
 
----
-
 ## Current Features
 
 - Read Nginx access log line by line
@@ -14,7 +12,7 @@ tools and parsers in the future.
     - **HTTP status code**
 - Load configuration from a `.env` file (e.g., log file path)
 
-## 🛠️ Technologies
+## Technologies
 
 - **Python 3.x**
 - Built-in modules: `os`, `pathlib`
@@ -30,29 +28,30 @@ tools and parsers in the future.
 └── README.md             # documentation
 ```
 
----
-
 ## Setup
 
 1. Create a `.env` file:
    ```env
    NGINX_LOG_FILE=./sample.access.log
+   ```
 
 2. Install dependencies:
 
+```shell
 python nginx_log_parser.py
+```
 
 3. Run the script:
+   ```shell
    python nginx_log_parser.py
+   ```
 
-Example Output
+**Example Output**
 IP: 182.44.67.97, Status: 301
 IP: 43.157.179.227, Status: 200
-```
-
 
 ## Further development
-```
+
 - Basic Nginx log reader (current)
 
 - Extend parsing (date, request, user agent, referrer, etc.)
