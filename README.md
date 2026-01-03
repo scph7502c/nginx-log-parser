@@ -31,9 +31,9 @@ tools and parsers in the future.
 ## Setup
 
 1. Create a `.env` file:
-   ```env
-   NGINX_LOG_FILE=./sample.access.log
-   ```
+```env
+NGINX_LOG_FILE=./sample.access.log
+```
 
 2. Install dependencies:
 
@@ -42,9 +42,9 @@ python nginx_log_parser.py
 ```
 
 3. Run the script:
-   ```shell
-   python nginx_log_parser.py
-   ```
+```shell
+python nginx_log_parser.py
+```
 
 **Example Output**
 IP: 182.44.67.97, Status: 301
@@ -60,5 +60,5 @@ IP: 43.157.179.227, Status: 200
 
 - Implement support for other log formats (Apache, system logs, etc.)
 
-Provide CSV/JSON export functionality
-```
+- Add CSV/JSON export functionality
+
